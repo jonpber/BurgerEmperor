@@ -1,0 +1,18 @@
+body {
+	background: #256a68;
+}
+
+.mainDiv {
+	background: white;
+	width: 750px;
+	padding: 25px;
+	border-radius: 70px;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.46);
+	margin: auto;
+}
+
+
+p {
+	color: black;
+}
+

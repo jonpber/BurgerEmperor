@@ -1,2 +1,2 @@
 # burger
-A burger eating app that uses MySQL, Express, and Handlerbars.
+A burger eating app that uses MySQL, Express, and Handlebars.

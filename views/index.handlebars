@@ -2,6 +2,9 @@
 <div class="mainDiv burgersToEat">
 	{{#each burger.burgersToEat}}
 		<p>Name: {{this.burger_name}}</p>
+		<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+			<button type="submit">Eat Burger!</button>
+		</form>
 		<hr>
 	{{/each}}
 </div>
@@ -17,6 +20,6 @@
 	<h2>Add a Burger to the Menu:</h2>
 	<form method="POST" action="/api/burgers" class="button-size" >
 		<input type="text" name="burger_name"></input>
-		<button type="submit">Add Burger!</button>
+		<button type="submit" class="addBurgButton">Add Burger!</button>
 	</form>
 </div>

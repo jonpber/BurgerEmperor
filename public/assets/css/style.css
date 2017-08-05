@@ -2,17 +2,21 @@
 	clear: both;
 }
 
-body {
-	background: #256a68;
-}
-
-button {
+.addBurgButton {
 	margin: auto;
 	display: block;
 	width: 450px;
 	height: 35px;
 	border-radius: 0 0 10px 10px;
 	border: 0;
+}
+
+body {
+	background: #256a68;
+}
+
+button {
+
 }
 
 h1, h2 {

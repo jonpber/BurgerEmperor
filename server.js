@@ -13,13 +13,19 @@ var port = process.env.PORT || 7000;
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.use(method("_method"));
+
 app.use(body.json()); // support json encoded bodies
 app.use(body.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(express.static(path.join('public', "assets", "css")));
+app.use(express.static(path.join('public', "assets", "img")));
 
 app.get("/", router.getIndex);
 
+app.post("/api/burgers", router.addBurg);
+
+app.put("/api/burgers/:id", router.eatBurg);
 
 app.listen(port, function(error){
 	if (error){

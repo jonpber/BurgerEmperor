@@ -1,5 +1,68 @@
+.addBurger {
+	clear: both;
+}
+
+.addBurgButton {
+	margin: auto;
+	display: block;
+	width: 450px;
+	height: 35px;
+	border-radius: 0 0 10px 10px;
+	border: 0;
+}
+
 body {
-	background: #256a68;
+	background-image: url("Melamine-wood-002.png")
+}
+
+.burgerHeader {
+	width: 100%;
+}
+
+.burgersToEat {
+	float: left;
+}
+
+button {
+
+}
+
+.container-fluid {
+    padding-right: 0; 
+    padding-left: 0;
+}
+
+.eatenBurger {
+	float: right;
+}
+
+h1, h2 {
+	text-align: center;
+	color: white;
+}
+
+h1 {
+	font-family: 'Sriracha', cursive;
+	margin: 10px;
+	font-size: 45px;
+}
+
+h3 {
+	color: white;
+}
+
+input {
+	display: block;
+	width: 450px;
+	height: 50px;
+	margin: auto;
+	border-radius: 10px 10px 0 0;
+	border: 0;
+}
+
+.mainContainer {
+	width: 810px;
+	margin: auto;
 }
 
 .mainDiv {
@@ -9,10 +72,16 @@ body {
 	border-radius: 70px;
 	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.46);
 	margin: auto;
+	width: 300px;
+	margin-bottom: 35px;
 }
 
+.navbar-inverse {
+	background-color: black;
+	border-color: #080808;
+	margin: 0;
+}
 
 p {
 	color: black;
 }
-

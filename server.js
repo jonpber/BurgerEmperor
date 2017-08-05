@@ -19,6 +19,7 @@ app.use(body.json()); // support json encoded bodies
 app.use(body.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(express.static(path.join('public', "assets", "css")));
+app.use(express.static(path.join('public', "assets", "img")));
 
 app.get("/", router.getIndex);
 

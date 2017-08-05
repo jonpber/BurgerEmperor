@@ -1,10 +1,22 @@
-<div class="mainDiv">
-
-	<h1>Burger Time</h1>
-
-	{{#each burger}}
-	  <p>Name: {{burger_name}}</p>
-	  <hr>
+<h1>Burger Time</h1>
+<div class="mainDiv burgersToEat">
+	{{#each burger.burgersToEat}}
+		<p>Name: {{this.burger_name}}</p>
+		<hr>
 	{{/each}}
+</div>
 
+<div class="mainDiv burgersToEat">
+	{{#each burger.eatenBurgers}}
+		<p>Name: {{this.burger_name}}</p>
+		<hr>
+	{{/each}}
+</div>
+
+<div class="addBurger">
+	<h2>Add a Burger to the Menu:</h2>
+	<form method="POST" action="/api/burgers" class="button-size" >
+		<input type="text" name="burger_name"></input>
+		<button type="submit">Add Burger!</button>
+	</form>
 </div>

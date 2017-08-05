@@ -5,7 +5,18 @@ var orm = {
 	selectAll: function(callback){
 		connection.query("SELECT * FROM burgers", function(err, res){
 			if (err) throw err;
-			callback(res);
+			var burgsToEat = res.filter(function(burgers){
+				return !burgers.devoured;
+			})
+
+			var eatenBurgs = res.filter(function(burgers){
+				return burgers.devoured;
+			})
+			var testObj = {
+				burgersToEat: burgsToEat,
+				eatenBurgers: eatenBurgs
+			}
+			callback(testObj);
 		})
 	},
 
@@ -25,4 +36,6 @@ var orm = {
 	}
 }
 
+
+orm.updateOne("DoubleBurger", true);
 module.exports = orm;

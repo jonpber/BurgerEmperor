@@ -2,40 +2,29 @@ var path = require("path");
 var connection = require(path.join(__dirname, "connection.js"));
 
 var orm = {
-	selectAll: function(callback){
+	selectAll: function(cb){
 		connection.query("SELECT * FROM burgers", function(err, res){
 			if (err) throw err;
-			var burgsToEat = res.filter(function(burgers){
-				return !burgers.devoured;
-			})
-
-			var eatenBurgs = res.filter(function(burgers){
-				return burgers.devoured;
-			})
-			var testObj = {
-				burgersToEat: burgsToEat,
-				eatenBurgers: eatenBurgs
-			}
-			callback(testObj);
+			cb(res);
 		})
 	},
 
-	insertOne: function(val){
+	insertOne: function(val, cb){
 		connection.query("INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)", [val, false], function(err, res){
 			if (err) throw err;
+			cb();
+
 		})
 	},
 
-	updateOne: function(burgerID, val){
+	updateOne: function(burgerID, val, callback){
 		connection.query("UPDATE burgers SET ? WHERE ?", [
-			{devoured: val},
-			{id: burgerID}
-			], function(err, res){
+			{devoured: val}, {id: burgerID} ], function(err, res){
 			if (err) throw err;
-		})
+			console.log("orm callback function is a " + callback);
+			callback();
+			})
 	}
 }
 
-
-orm.updateOne("DoubleBurger", true);
 module.exports = orm;

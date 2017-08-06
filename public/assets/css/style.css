@@ -12,19 +12,24 @@
 }
 
 body {
-	background-image: url("Melamine-wood-002.png")
+	background-image: url("../img/Melamine-wood-002.png")
+}
+
+.burger {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .burgerHeader {
 	width: 100%;
 }
 
-.burgersToEat {
-	float: left;
+.burgerImg {
+    width: 225px;
 }
 
-button {
-
+.burgersToEat {
+	float: left;
 }
 
 .container-fluid {
@@ -36,7 +41,7 @@ button {
 	float: right;
 }
 
-h1, h2 {
+h1, h2, h4 {
 	text-align: center;
 	color: white;
 }
@@ -47,8 +52,16 @@ h1 {
 	font-size: 45px;
 }
 
+h2 {
+	color: black;
+}
+
 h3 {
 	color: white;
+}
+
+h4 {
+	color: black;
 }
 
 input {
@@ -65,24 +78,6 @@ input {
 	margin: auto;
 }
 
-button {
-
-}
-
-h1, h2 {
-	text-align: center;
-	color: white;
-}
-
-input {
-	display: block;
-	width: 450px;
-	height: 50px;
-	margin: auto;
-	border-radius: 10px 10px 0 0;
-	border: 0;
-}
-
 .mainDiv {
 	background: white;
 	width: 750px;
@@ -90,9 +85,9 @@ input {
 	border-radius: 70px;
 	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.46);
 	margin: auto;
-	width: 300px;
-	float: left;
+    width: 100%;
 	margin-bottom: 35px;
+    text-align: center;
 }
 
 .navbar-inverse {

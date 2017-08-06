@@ -1,0 +1,7 @@
+<div class="burger col-sm-6 col-md-3">
+	<img src="/assets/img/burgerVector.png" alt="burger" class="burgerImg">
+	<p>{{this.burger_name}}</p>
+	<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+		<button type="submit">Eat Burger!</button>
+	</form>
+</div>

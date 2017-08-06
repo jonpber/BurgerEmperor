@@ -1,5 +1,11 @@
 .addBurger {
 	clear: both;
+	margin: 50px auto;
+	width: 50%;
+	background: white;
+	padding: 15px;
+	border-radius: 30px;
+	border: 3px solid rgba(0, 0, 0, 0.75);
 }
 
 .addBurgButton {
@@ -8,11 +14,13 @@
 	width: 450px;
 	height: 35px;
 	border-radius: 0 0 10px 10px;
-	border: 0;
+	border: 2px solid black;
+	border-top: 0;
 }
 
 body {
-	background-image: url("../img/Melamine-wood-002.png")
+	background-image: url("../img/Melamine-wood-002.png");
+	padding-top: 70px;
 }
 
 .burger {
@@ -22,6 +30,16 @@ body {
 
 .burgerHeader {
 	width: 100%;
+}
+
+.burgerHeaderCrop {
+	width: 100%;
+	display: none;
+}
+
+.burgerHeaderMobile {
+	width: 100%;
+	display: none;
 }
 
 .burgerImg {
@@ -50,14 +68,26 @@ h1 {
 	font-family: 'Sriracha', cursive;
 	margin: 10px;
 	font-size: 45px;
+	display: inline;
+}
+
+h2, h3 {
+	font-family: 'Alfa Slab One', cursive;
 }
 
 h2 {
 	color: black;
+    font-size: 50px;
+    margin-bottom: 30px;
 }
 
 h3 {
 	color: white;
+	font-family: 'Bad Script', cursive;
+	text-align: center;
+	padding: 25px 65px;
+	font-size: 31px;
+	margin: 15px;
 }
 
 h4 {
@@ -70,7 +100,11 @@ input {
 	height: 50px;
 	margin: auto;
 	border-radius: 10px 10px 0 0;
-	border: 0;
+	border: 2px solid black;
+}
+
+.logoImg {
+	width: 85px;
 }
 
 .mainContainer {
@@ -90,12 +124,44 @@ input {
     text-align: center;
 }
 
+.navbar-brand {
+	margin-left: 10%;
+}
+
+.navbar-container {
+	padding: 10px 10%;
+}
+
 .navbar-inverse {
-	background-color: black;
+    background-color: rgba(0, 0, 0, 0.94);
 	border-color: #080808;
 	margin: 0;
 }
 
 p {
 	color: black;
+}
+
+.topMargin {
+/*	margin-top: 70px;*/
+}
+
+@media screen and (min-width: 1200px){
+	.burgerHeader {
+		display: none;
+	}
+
+	.burgerHeaderCrop {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.burgerHeader {
+		display: none;
+	}
+
+	.burgerHeaderMobile {
+		display: block;
+	}
 }

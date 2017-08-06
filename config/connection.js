@@ -1,11 +1,9 @@
 var mysql = require('mysql');
+var path = require("path");
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '****',
-  database : 'burgers_db'
-});
+var keys = require(path.join(__dirname, "keys.js"));
+
+var connection = mysql.createConnection(keys);
 
 connection.connect(function(err) {
 	if (err) {

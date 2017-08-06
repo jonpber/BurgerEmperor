@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-inverse bg-primary">
 	<h1>Burger Emperor</h1>
 </nav>
@@ -10,7 +9,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12 col-lg-10">
-			<img class="burgerHeader" class="burgerImg" src="burgerTop2.jpg">
+			<img class="burgerHeader" class="burgerImg" src="assets/img/burgerTop2.jpg">
 		</div>
 
 		<div class="col-md-12 col-lg-2">
@@ -19,28 +18,39 @@
 	</div>
 </div>
 
-<div class="mainContainer">
-	<div class="mainDiv burgersToEat">
-		{{#each burger.burgersToEat}}
-			<p>Name: {{this.burger_name}}</p>
-			<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
-				<button type="submit">Eat Burger!</button>
-			</form>
-			<hr>
-		{{/each}}
-	</div>
 
-	<div class="mainDiv eatenBurger">
-		{{#each burger.eatenBurgers}}
-			<p>Name: {{this.burger_name}}</p>
-			<hr>
-		{{/each}}
-	</div>
+<div class="mainDiv burgersToEat row">
+	<h2>Our Menu</h2>
+	{{#each burger}}
+		{{#unless this.devoured}}
+			<div class="burger col-sm-6 col-md-3">
+				<img src="/assets/img/burgerVector.png" alt="burger" class="burgerImg">
+				<p>{{this.burger_name}}</p>
+				<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+					<button type="submit">Eat Burger!</button>
+				</form>
+			</div>
+		{{/unless}}
+	{{/each}}
+</div>
 
-	<div class="addBurger">
-		<h2>Add a Burger to the Menu:</h2>
-		<form method="POST" action="/api/burgers" class="button-size" >
-			<input type="text" name="burger_name"></input>
-			<button type="submit" class="addBurgButton">Add Burger!</button>
-		</form>
-	</div>
+<div class="mainDiv eatenBurger">
+	<h2>Gone Burger Gone</h2>
+	<h4>(Retired Classics)</h4>
+	{{#each burger}}
+		{{#if this.devoured}}
+			<div class="burger col-sm-6 col-md-3">
+				<img src="/assets/img/goneBurgergone.png" alt="burger" class="burgerImg">
+				<p>{{this.burger_name}}</p>
+			</div>
+		{{/if}}
+	{{/each}}
+</div>
+
+<div class="addBurger">
+	<h2>Add a Burger to the Menu:</h2>
+	<form method="POST" action="/api/burgers" class="button-size" >
+		<input type="text" name="burger_name"></input>
+		<button type="submit" class="addBurgButton">Add Burger!</button>
+	</form>
+</div>

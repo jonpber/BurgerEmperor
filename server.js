@@ -18,14 +18,9 @@ app.use(method("_method"));
 app.use(body.json()); // support json encoded bodies
 app.use(body.urlencoded({ extended: true })); // support encoded bodies
 
-app.use(express.static(path.join('public', "assets", "css")));
-app.use(express.static(path.join('public', "assets", "img")));
+app.use(express.static(path.join('public')));
 
-app.get("/", router.getIndex);
-
-app.post("/api/burgers", router.addBurg);
-
-app.put("/api/burgers/:id", router.eatBurg);
+app.use("/", router);
 
 app.listen(port, function(error){
 	if (error){

@@ -21,7 +21,6 @@ var orm = {
 		connection.query("UPDATE burgers SET ? WHERE ?", [
 			{devoured: val}, {id: burgerID} ], function(err, res){
 			if (err) throw err;
-			console.log("orm callback function is a " + callback);
 			callback();
 			})
 	}

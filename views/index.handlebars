@@ -1,56 +1,66 @@
-<nav class="navbar navbar-inverse bg-primary">
-	<h1>Burger Emperor</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid navbar-container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#Home">Burger Emperor</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span> 
+			</button>
+		</div>
+		<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="#Menu">Menu</a></li>
+				<li><a href="#Classics">Retired Classics</a></li> 
+				<li><a href="#Submit">Submit a Burger</a></li> 
+			</ul>
+		</div>
+	</div>
 </nav>
 
-<div>
-	
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid topMargin" id="Home">
 	<div class="row">
-		<div class="col-md-12 col-lg-10">
-			<img class="burgerHeader" class="burgerImg" src="assets/img/burgerTop2.jpg">
+		<div class="col-md-12">
+			<img class="burgerHeader" src="assets/img/burgerTop2.jpg">
+			<img class="burgerHeaderCrop" src="assets/img/burgerTopCrop.jpg">
+			<img class="burgerHeaderMobile" src="assets/img/burgerTopMobile.jpg">
 		</div>
 
-		<div class="col-md-12 col-lg-2">
-			<h3 class="aboutUsBlurb">Welcome to the home of the classy burger. Since our grand-opening way back in 2016, we've strived to make every burger a reflection of who we are.</h3>
+		<div class="col-md-12">
+			<h3 class="aboutUsBlurb">Welcome to the home of deliciousness. Since our grand-opening way back in 2017, we've strived to make every burger a reflection of who we are: Emperors of Yum.</h3>
 		</div>
 	</div>
 </div>
 
+<div class="container">
+	<div class="mainDiv burgersToEat row" id="Menu">
+		<h2>Our Menu</h2>
+		{{#each burger}}
+			{{#unless this.devoured}}
+				{{> availaBurg}}
+			{{/unless}}
+		{{/each}}
+	</div>
 
-<div class="mainDiv burgersToEat row">
-	<h2>Our Menu</h2>
-	{{#each burger}}
-		{{#unless this.devoured}}
-			<div class="burger col-sm-6 col-md-3">
-				<img src="/assets/img/burgerVector.png" alt="burger" class="burgerImg">
-				<p>{{this.burger_name}}</p>
-				<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
-					<button type="submit">Eat Burger!</button>
-				</form>
-			</div>
-		{{/unless}}
-	{{/each}}
+	<div class="mainDiv eatenBurger" id="Classics">
+		<h2>Gone Burger Gone</h2>
+		<h4>(Retired Classics)</h4>
+		{{#each burger}}
+			{{#if this.devoured}}
+				{{> eatenBurg}}
+			{{/if}}
+		{{/each}}
+	</div>
+
+	<h3>Think you got what it takes to make it to on our Menu? Submit a burger and find out!</h3>
+
+	<div class="addBurger" id="Submit">
+		<h2>Submit-A-Burger:</h2>
+		<form method="POST" action="/api/burgers" class="button-size" >
+			<input type="text" name="burger_name" placeholder="The Next Best Burger"></input>
+			<button type="submit" class="addBurgButton">Add Burger!</button>
+		</form>
+	</div>
+
 </div>
 
-<div class="mainDiv eatenBurger">
-	<h2>Gone Burger Gone</h2>
-	<h4>(Retired Classics)</h4>
-	{{#each burger}}
-		{{#if this.devoured}}
-			<div class="burger col-sm-6 col-md-3">
-				<img src="/assets/img/goneBurgergone.png" alt="burger" class="burgerImg">
-				<p>{{this.burger_name}}</p>
-			</div>
-		{{/if}}
-	{{/each}}
-</div>
-
-<div class="addBurger">
-	<h2>Add a Burger to the Menu:</h2>
-	<form method="POST" action="/api/burgers" class="button-size" >
-		<input type="text" name="burger_name"></input>
-		<button type="submit" class="addBurgButton">Add Burger!</button>
-	</form>
-</div>

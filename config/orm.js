@@ -3,7 +3,7 @@ var connection = require(path.join(__dirname, "connection.js"));
 
 var orm = {
 	selectAll: function(cb){
-		connection.query("SELECT * FROM burgers", function(err, res){
+		connection.query("select *, MOD(burgers.id, 4) as idMod from burgers", function(err, res){
 			if (err) throw err;
 			cb(res);
 		})

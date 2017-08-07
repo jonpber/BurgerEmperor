@@ -1,7 +1,14 @@
-<div class="burger col-sm-6 col-md-3">
-	<img src="/assets/img/burgerVector.png" alt="burger" class="burgerImg">
-	<p>{{this.burger_name}}</p>
-	<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
-		<button type="submit">Eat Burger!</button>
-	</form>
+<div class="burger col-xs-6 col-sm-6 col-md-3">
+	<div id="card{{this.id}}" class="card">
+		<p class="burgerName">{{this.burger_name}}</p>
+		<div class="front">
+			<img src="/assets/img/placeHBurg.jpg" alt="burger" class="burgerImg">
+		</div>
+		<div class="back">
+			<img src="/assets/img/BurgBack.jpg" alt="burger" class="burgerImg">
+			<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+				<button type="submit" class="eatBurg">Eat Me!</button>
+			</form>
+		</div>	
+	</div>
 </div>

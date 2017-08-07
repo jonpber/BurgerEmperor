@@ -1,5 +1,4 @@
 $(function(){
-	console.log("click");
 	$('body').scrollspy({target: ".navbar", offset: 70});   
 
 	// Add smooth scrolling on all links inside the navbar
@@ -22,5 +21,10 @@ $(function(){
 			window.location.hash = hash;
 		});
 	}  // End if
+	});
+
+	$(".card").flip({
+		trigger: 'hover',
+		speed: 700
 	});
 });

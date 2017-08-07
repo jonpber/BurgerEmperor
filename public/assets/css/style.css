@@ -1,3 +1,7 @@
+a {
+	text-align: center;
+}
+
 .addBurger {
 	clear: both;
 	margin: 50px auto;
@@ -6,6 +10,7 @@
 	padding: 15px;
 	border-radius: 30px;
 	border: 3px solid rgba(0, 0, 0, 0.75);
+	margin-top: 0;
 }
 
 .addBurgButton {
@@ -25,7 +30,12 @@ body {
 
 .burger {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.burgerHeader, .burgerHeaderCrop, .burgerHeaderMobile  {
+    border-bottom: 2px solid rgba(32, 19, 14, 0.8);
 }
 
 .burgerHeader {
@@ -43,7 +53,13 @@ body {
 }
 
 .burgerImg {
-    width: 225px;
+	width: 100%;
+	border: 1px solid #828282;
+}
+
+.burgerName {
+	margin: 15px 0 0;
+	letter-spacing: 1px;
 }
 
 .burgersToEat {
@@ -53,6 +69,15 @@ body {
 .container-fluid {
     padding-right: 0; 
     padding-left: 0;
+}
+
+.eatBurg {
+	position: absolute;
+	top: 39%;
+	left: 29%;
+	font-size: 30px;
+	border-radius: 10px;
+	border: 2px solid black;
 }
 
 .eatenBurger {
@@ -71,7 +96,7 @@ h1 {
 	display: inline;
 }
 
-h2, h3 {
+h2, h3, a, .burgerName, .eatBurg {
 	font-family: 'Alfa Slab One', cursive;
 }
 
@@ -101,6 +126,12 @@ input {
 	margin: auto;
 	border-radius: 10px 10px 0 0;
 	border: 2px solid black;
+	text-align: center;
+	font-size: 23px;
+}
+
+input, .addBurgButton, .addBurger {
+	width: 100%;
 }
 
 .logoImg {
@@ -115,7 +146,7 @@ input {
 .mainDiv {
 	background: white;
 	width: 750px;
-	padding: 25px;
+	padding: 25px 25px 45px;
 	border-radius: 70px;
 	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.46);
 	margin: auto;
@@ -146,16 +177,6 @@ p {
 /*	margin-top: 70px;*/
 }
 
-@media screen and (min-width: 1200px){
-	.burgerHeader {
-		display: none;
-	}
-
-	.burgerHeaderCrop {
-		display: block;
-	}
-}
-
 @media screen and (max-width: 500px){
 	.burgerHeader {
 		display: none;
@@ -164,4 +185,50 @@ p {
 	.burgerHeaderMobile {
 		display: block;
 	}
+
+	input, .addBurgButton, .addBurger {
+		width: 100%;
+	}
 }
+
+@media screen and (min-width: 992px){
+	.eatBurg {
+		left: 19%;
+	}
+
+	.burgerName {
+	    font-size: 22px;
+	}
+
+	.addBurger {
+		width: 60%;
+	}
+
+	input, .addBurgButton{
+		width: 75%;
+	}
+}
+
+@media screen and (min-width: 1200px){
+	.burgerHeader {
+		display: none;
+	}
+
+	.burgerHeaderCrop {
+		display: block;
+	}
+
+	.eatBurg {
+		position: absolute;
+		top: 39%;
+		left: 26%;
+		font-size: 30px;
+		border-radius: 10px;
+		border: 2px solid black;
+	}
+
+	.burgerName {
+	    font-size: 25px;
+	}
+}
+

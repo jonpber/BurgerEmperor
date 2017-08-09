@@ -3,7 +3,16 @@ var path = require("path");
 
 var keys = require(path.join(__dirname, "keys.js"));
 
-var connection = mysql.createConnection(keys);
+var connection;
+
+if (process.env.JAWSDB_URL){
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+
+else {
+	connection = mysql.createConnection(keys);
+}
+
 
 connection.connect(function(err) {
 	if (err) {
